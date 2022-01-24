@@ -1,8 +1,6 @@
 # -*- coding: utf-8 -*-
 """
-Created on Wed Dec 29 18:59:42 2021
-
-@author: ASHWIN M S
+@authors: ASHWIN M S & Aditya Navin Nair
 """
 
 import socket
