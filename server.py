@@ -1,13 +1,13 @@
 # -*- coding: utf-8 -*-
 """
-@authors: ASHWIN M S & Aditya Navin Nair
+@author: ASHWIN M S & Aditya Navin Nair
 """
 
 import socket
 import os
 
 s=socket.socket()
-print("Socket created")
+print("Server started.")
 
 working_path = "D:/Pythonworks/CNProject/testarea"
 
@@ -43,9 +43,14 @@ def edit_file(filename,content):
 
 
 def delete_file(filename):
+    return_statement = "File is deleted. Files in directory now: \n"
     if os.path.exists(filename):
         os.remove(filename)
-        return "File is deleted"
+        file_list = os.listdir()
+        for file in file_list:
+           return_statement += file
+           return_statement += " "
+        return return_statement
     else:
         return "The file doesn't exist. "
     
@@ -73,7 +78,7 @@ while run_server:
     str=c.recv(1024).decode()
     print('Connected with ',addr)
     print("Command received: " + str)
-    command_list = str.split("_")
+    command_list = str.split(" ", 2)
     
     if "create" in command_list:
         message = create_file(command_list[1])

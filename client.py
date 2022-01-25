@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 """
-@authors: ASHWIN M S & Aditya Navin Nair
+@author: ASHWIN M S & Aditya Navin Nair
 """
 
 import socket
